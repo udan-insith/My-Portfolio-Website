@@ -1,0 +1,59 @@
+/* Basic Reset */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  background: black;
+}
+
+/* Nav bar */
+.list-links {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+  font-size: 1.4rem;
+
+  span {
+    color: #999;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: white;
+
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 400ms ease-in-out;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-evenly;
+}
